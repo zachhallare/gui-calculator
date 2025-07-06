@@ -1,14 +1,21 @@
-import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        // Starting Page.
+        DefaultFrame frame = new DefaultFrame();
+        JLabel label = new JLabel();
+        label.setText("Digital Calendar");
+        label.setForeground(new Color(0x36454F));
+        label.setFont(new Font("SansSerif", Font.BOLD, 24));
+        label.setBounds(150, -95, 250, 250);
+        frame.add(label);
 
-        frame.setTitle("JFrame title goes here.");
-        frame.setSize(420, 420);
-        frame.setVisible(true);
-
-
-
+        ImageIcon image = new ImageIcon("logo.png");
+        frame.setIconImage(image.getImage());
+        frame.getContentPane().setBackground(new Color(0xD3D3D3));
     }
 }
