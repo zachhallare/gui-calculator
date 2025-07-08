@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class DefaultFrame extends JFrame implements ActionListener {
+public class StartingWindow extends JFrame implements ActionListener {
     private static final int BUTTON_WIDTH = 120;
     private static final int BUTTON_HEIGHT = 40;
     private static final int BUTTON_X = 180;
@@ -19,7 +19,7 @@ public class DefaultFrame extends JFrame implements ActionListener {
     JButton signUpButton;
     JButton exitButton;
 
-    public DefaultFrame () {
+    public StartingWindow () {
         // Frame.
         this.setTitle("Digital Calendar");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,8 +60,12 @@ public class DefaultFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginButton) {
             System.out.println("Entering the login page.");
+            this.setVisible(false);
+            new LoginWindow(this);
         } else if (e.getSource() == signUpButton) {
             System.out.println("Entering the sign up page.");
+            this.setVisible(false);
+            new SignUpWindow(this);
         } else if (e.getSource() == exitButton) {
             System.out.println("Exiting the program.");
         }
